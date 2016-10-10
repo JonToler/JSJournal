@@ -27,7 +27,9 @@ Entry.prototype.countVowels = function(){
 };
 
 Entry.prototype.countConsonants = function() {
-  return this.paragraph.length - this.countVowels(this.paragraph);
+  var paragraphArray = this.paragraph.split("");
+  var noSpaces = this.paragraph.replace(/\s/,'');
+  return noSpaces.length - this.countVowels(this.paragraph);
 };
 
 Entry.prototype.getTeaser = function() {

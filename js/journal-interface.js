@@ -3,10 +3,10 @@ var Entry = require('./../js/journal.js').journalModule;
 $(function(){
   $('#journal-form').submit(function(event){
     event.preventDefault();
-    var userInput = $("#entry").val().replace(/\s\s+/g,' ');
+    var userInput = $("#entry").val().replace(/\s+/g,' ');
     var myEntry = new Entry (userInput);
-    //console.log(myEntry.paragraph.split(" "));
+    console.log(userInput);
     //do some journal stuff
-    $('#journal').append("<li>" + myEntry.paragraph + "</li>");
+    $('#journal').append("<li>" + myEntry.countConsonants() + "</li>");
   });
 });
